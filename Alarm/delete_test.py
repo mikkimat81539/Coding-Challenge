@@ -49,14 +49,21 @@ class MainWindow(QMainWindow):
 
 		self.button.clicked.connect(self.button_clicked)
 
+	def Delete_Button(self):
+		self.delete_button = QPushButton("Delete")
+		self.delete_button.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+		self.delete_button.setFixedSize(100, 30)
+
+		self.layout.addWidget(self.delete_button, self.rowIndex, 1)
+
 	def button_clicked(self):
 		self.Label()
+		self.Delete_Button()
 		self.counter += 1
 		self.button.setText(str(self.counter))
 
 		self.numLabel.setText(str(self.counter))
 		self.rowIndex += 1
-		print(self.rowIndex)
 
 		self.database.append(self.counter)
 
