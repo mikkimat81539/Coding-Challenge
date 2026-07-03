@@ -38,6 +38,8 @@ class MainWindow(QMainWindow):
 
 		self.Labels()
 
+		self.counter = 0
+
 	def Labels(self):
 		self.apple = QLabel("APPLE", self)
 		self.banana = QLabel("BANANA", self)
@@ -119,6 +121,16 @@ class MainWindow(QMainWindow):
 
 		self.layout.addWidget(self.container_two, 0, 1)
 
+		self.Increment_Button()
+
+	def Increment_Button(self):
+			self.numButton = QPushButton("")
+
+			self.numButton.setFixedSize(100, 50)
+			self.numButton.setCursor(Qt.CursorShape.PointingHandCursor)
+
+
+			self.layout_two.addWidget(self.numButton, alignment=Qt.AlignmentFlag.AlignTop | Qt.AlignmentFlag.AlignHCenter)
 
 	def Container_Three(self):
 		self.container_three = QWidget()
