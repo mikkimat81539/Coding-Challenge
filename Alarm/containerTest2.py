@@ -115,7 +115,7 @@ class MainWindow(QMainWindow):
 	def Container_Two(self):
 		# Create Button - DONE
 		# Each time button is pressed, number inside button is changed - DONE
-		# Each time button is pressed, label of number is created on each row
+		# Each time button is pressed, label of number is created on each row - DONE
 		# Each label will have a delete button as child
 
 		self.container_two = QWidget()
@@ -140,15 +140,23 @@ class MainWindow(QMainWindow):
 
 	def Display_Number(self):
 		self.counter += 1
-		self.numLabel = QLabel(str(self.counter))
+		self.numLabel = QLabel(str(self.counter), self.container_two)
+		self.numLabel_layout = QHBoxLayout(self.numLabel)
 
-		if self.counter >= 7:
+		if self.counter >= 6:
 			self.numButton.setText("")
 			self.counter = 0 
 			self.numButton.clicked.disconnect(self.Display_Number)
 		else:
 			self.numButton.setText(str(self.counter))
 			self.layout_two.addWidget(self.numLabel)
+			self.Number_Delete_Button()
+
+	def Number_Delete_Button(self):
+		self.delete = QPushButton("Delete")
+		self.delete.setFixedSize(100, 30)
+		
+		self.numLabel_layout.addWidget(self.delete)		
 
 	def Container_Three(self):
 		self.container_three = QWidget()
