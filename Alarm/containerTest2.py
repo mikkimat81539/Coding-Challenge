@@ -11,7 +11,7 @@ class MainWindow(QMainWindow):
 		
 		# set screen attributes
 		self.setWindowTitle("Container Test 2")
-		self.setFixedSize(800, 600)
+		self.setFixedSize(800, 700)
 		self.setStyleSheet("background-color: #dbdbdb")
 
 		# Layout Container
@@ -27,7 +27,7 @@ class MainWindow(QMainWindow):
 	def Container_One(self):
 		# Vertical Layout - DONE
 		# QLabel - DONE
-		# Child widget for the label will be a button
+		# Child widget for the label will be a button - DONE
 		self.container_one = QWidget()
 		self.layout_one = QVBoxLayout(self.container_one)
 
@@ -111,13 +111,34 @@ class MainWindow(QMainWindow):
 	
 
 	def Container_Two(self):
-		pass
+		self.container_two = QWidget()
+		self.layout_two = QVBoxLayout(self.container_two)
+
+		self.container_two.setStyleSheet("background-color: #fffb91;")
+		self.container_two.setFixedSize(300, 300)
+
+		self.layout.addWidget(self.container_two, 0, 1)
+
 
 	def Container_Three(self):
-		pass
+		self.container_three = QWidget()
+		self.layout_three = QVBoxLayout(self.container_three)
+
+		self.container_three.setStyleSheet("background-color: pink;")
+		self.container_three.setFixedSize(300, 300)
+
+		self.layout.addWidget(self.container_three, 1, 0)
+
 
 	def Container_Four(self):
-		pass
+		self.container_four = QWidget()
+		self.layout_four = QVBoxLayout(self.container_four)
+
+		self.container_four.setStyleSheet("background-color: #91fffb;")
+		self.container_four.setFixedSize(300, 300)
+
+		self.layout.addWidget(self.container_four, 1, 1)
+
 
 app = QApplication([])
 
