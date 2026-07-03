@@ -44,8 +44,15 @@ class MainWindow(QMainWindow):
 		self.coconut = QLabel("COCONUT", self)
 
 		self.apple_layout = QHBoxLayout(self.apple) # layout using label
+		self.apple_layout.setContentsMargins(50, 5, 5, 5)
+
 		self.banana_layout = QHBoxLayout(self.banana)
+		self.banana_layout.setContentsMargins(50, 5, 5, 5)
+	
+
 		self.coconut_layout = QHBoxLayout(self.coconut)
+		self.coconut_layout.setContentsMargins(50, 5, 5, 5)
+
 
 
 #		self.apple.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -89,6 +96,11 @@ class MainWindow(QMainWindow):
 		self.button1.setStyleSheet("color: black")
 		self.button2.setStyleSheet("color: black")
 		self.button3.setStyleSheet("color: black")
+
+
+		self.button1.setCursor(Qt.CursorShape.PointingHandCursor)
+		self.button2.setCursor(Qt.CursorShape.PointingHandCursor)
+		self.button3.setCursor(Qt.CursorShape.PointingHandCursor)
 
 
 		# print(self.button1.parent())  # Display the parent of the widget
