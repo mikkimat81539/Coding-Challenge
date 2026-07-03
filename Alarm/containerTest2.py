@@ -36,12 +36,17 @@ class MainWindow(QMainWindow):
 
 		self.layout.addWidget(self.container_one, 0, 0)
 
-		self.Label_Button()
+		self.Labels()
 
-	def Label_Button(self):
-		self.apple = QLabel("APPLE")
-		self.banana = QLabel("BANANA")
-		self.coconut = QLabel("COCONUT")
+	def Labels(self):
+		self.apple = QLabel("APPLE", self)
+		self.banana = QLabel("BANANA", self)
+		self.coconut = QLabel("COCONUT", self)
+
+		self.apple_layout = QHBoxLayout(self.apple) # layout using label
+		self.banana_layout = QHBoxLayout(self.banana)
+		self.coconut_layout = QHBoxLayout(self.coconut)
+
 
 #		self.apple.setAlignment(Qt.AlignmentFlag.AlignCenter)
 #		self.banana.setAlignment(Qt.AlignmentFlag.AlignCenter)	
@@ -67,6 +72,31 @@ class MainWindow(QMainWindow):
 		self.layout_one.addWidget(self.apple)
 		self.layout_one.addWidget(self.banana)
 		self.layout_one.addWidget(self.coconut)
+
+		self.Delete_Button()
+
+		# print(self.apple.parent())
+
+	def Delete_Button(self):
+		self.button1 = QPushButton("Delete", self.apple)
+		self.button2 = QPushButton("Delete", self.banana)
+		self.button3 = QPushButton("Delete", self.coconut)
+
+		self.button1.setFixedSize(100, 30)
+		self.button2.setFixedSize(100, 30)
+		self.button3.setFixedSize(100, 30)
+
+		self.button1.setStyleSheet("color: black")
+		self.button2.setStyleSheet("color: black")
+		self.button3.setStyleSheet("color: black")
+
+
+		# print(self.button1.parent())  # Display the parent of the widget
+
+		self.apple_layout.addWidget(self.button1)
+		self.banana_layout.addWidget(self.button2)
+		self.coconut_layout.addWidget(self.button3)
+	
 
 	def Container_Two(self):
 		pass
