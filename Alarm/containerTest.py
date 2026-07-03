@@ -10,7 +10,7 @@ class MainWindow(QMainWindow):
 		super().__init__()
 		
 		# set screen attributes
-		self.setWindowTitle("Delete Test")
+		self.setWindowTitle("Container Test")
 		self.setFixedSize(500, 600)
 		self.setStyleSheet("background-color: #f7f197")
 
@@ -53,7 +53,32 @@ class MainWindow(QMainWindow):
 
 		
 	def horizontal_layout(self):
-		pass
+		self.v_container = QWidget()
+		self.v_layout = QHBoxLayout(self.v_container)
+		self.v_container.setStyleSheet("background-color: #03adfc")
+
+		self.v_container.setFixedSize(300, 200)
+
+		self.layout.addWidget(self.v_container)
+
+		self.H_Buttons()
+
+
+	def H_Buttons(self):
+		self.buttonA = QPushButton("A")
+		self.buttonB = QPushButton("B")
+		self.buttonC = QPushButton("C")
+		self.buttonD = QPushButton("D")	
+
+		self.buttonA.setCursor(Qt.CursorShape.PointingHandCursor)
+		self.buttonB.setCursor(Qt.CursorShape.PointingHandCursor)
+		self.buttonC.setCursor(Qt.CursorShape.PointingHandCursor)
+		self.buttonD.setCursor(Qt.CursorShape.PointingHandCursor)
+
+		self.v_layout.addWidget(self.buttonA)
+		self.v_layout.addWidget(self.buttonB)
+		self.v_layout.addWidget(self.buttonC)
+		self.v_layout.addWidget(self.buttonD)
 
 	
 app = QApplication([])
