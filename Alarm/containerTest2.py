@@ -155,7 +155,9 @@ class MainWindow(QMainWindow):
 	def Number_Delete_Button(self):
 		self.delete = QPushButton("Delete")
 		self.delete.setFixedSize(100, 30)
-		
+	
+		self.delete.setCursor(Qt.CursorShape.PointingHandCursor)
+
 		self.numLabel_layout.addWidget(self.delete)		
 
 	def Container_Three(self):
