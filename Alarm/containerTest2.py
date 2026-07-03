@@ -11,12 +11,12 @@ class MainWindow(QMainWindow):
 		
 		# set screen attributes
 		self.setWindowTitle("Container Test 2")
-		self.setFixedSize(500, 600)
+		self.setFixedSize(800, 600)
 		self.setStyleSheet("background-color: #dbdbdb")
 
 		# Layout Container
 		self.container = QWidget()
-		self.layout = QVBoxLayout(self.container)
+		self.layout = QGridLayout(self.container)
 		self.setCentralWidget(self.container)
 
 		self.Container_One()
@@ -25,10 +25,48 @@ class MainWindow(QMainWindow):
 		self.Container_Four()
 
 	def Container_One(self):
-		# Vertical Layout
-		# QLabel
+		# Vertical Layout - DONE
+		# QLabel - DONE
 		# Child widget for the label will be a button
-		pass
+		self.container_one = QWidget()
+		self.layout_one = QVBoxLayout(self.container_one)
+
+		self.container_one.setStyleSheet("background-color: green;")
+		self.container_one.setFixedSize(300, 300)
+
+		self.layout.addWidget(self.container_one, 0, 0)
+
+		self.Label_Button()
+
+	def Label_Button(self):
+		self.apple = QLabel("APPLE")
+		self.banana = QLabel("BANANA")
+		self.coconut = QLabel("COCONUT")
+
+#		self.apple.setAlignment(Qt.AlignmentFlag.AlignCenter)
+#		self.banana.setAlignment(Qt.AlignmentFlag.AlignCenter)	
+#		self.coconut.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+		self.apple.setStyleSheet("""
+			font-size: 20px;
+			color: red;
+		""")
+
+		self.banana.setStyleSheet("""
+			font-size: 20px;
+			color: yellow;
+		""")
+
+
+		self.coconut.setStyleSheet("""
+			font-size: 20px;
+			color: white;
+		""")
+
+
+		self.layout_one.addWidget(self.apple)
+		self.layout_one.addWidget(self.banana)
+		self.layout_one.addWidget(self.coconut)
 
 	def Container_Two(self):
 		pass
