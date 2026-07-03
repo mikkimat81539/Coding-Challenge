@@ -10,7 +10,7 @@ class MainWindow(QMainWindow):
 		super().__init__()
 		
 		# set screen attributes
-		self.setWindowTitle("Container Test")
+		self.setWindowTitle("Container Test 1")
 		self.setFixedSize(500, 600)
 		self.setStyleSheet("background-color: #f7f197")
 
