@@ -14,7 +14,7 @@ class MainWindow(QMainWindow):
 		
 		# set screen attributes
 		self.setWindowTitle("Delete Test")
-		self.setFixedSize(500, 300)
+		self.setFixedSize(500, 600)
 		self.setStyleSheet("background-color: pink")
 
 		# Layout Container
@@ -23,26 +23,42 @@ class MainWindow(QMainWindow):
 		self.setCentralWidget(self.container)
 
 		# Button Counter
-		self.counter = 1
+		self.counter = 0
 
 		self.database = sorted([]) # This is for storing the numbers
 
+		# Label Index
+		self.rowIndex = 2
+
 
 	def Label(self):
-		pass
+		self.numLabel = QLabel("")
+		self.numLabel.setStyleSheet("""
+			font-size: 20px;
+			color: black;
+		""")
+
+		self.layout.addWidget(self.numLabel, self.rowIndex, 0)
 
 	def Increment_Button(self):
-		self.button = QPushButton(str(self.counter))
+		self.button = QPushButton("")
 		self.button.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
 		self.button.setFixedSize(100, 50)
 
-		self.layout.addWidget(self.button)
+		self.layout.addWidget(self.button, 0, 0)
 
 		self.button.clicked.connect(self.button_clicked)
 
 	def button_clicked(self):
+		self.Label()
 		self.counter += 1
 		self.button.setText(str(self.counter))
+
+		self.numLabel.setText(str(self.counter))
+		self.rowIndex += 1
+		print(self.rowIndex)
+
+		self.database.append(self.counter)
 
 
 app = QApplication([])
