@@ -159,6 +159,10 @@ class MainWindow(QMainWindow):
 		self.delete.setCursor(Qt.CursorShape.PointingHandCursor)
 
 		self.numLabel_layout.addWidget(self.delete)		
+		self.delete.clicked.connect(self.delete_handler)
+
+	def delete_handler(self):
+		delete_signal = self.sender()
 
 	def Container_Three(self):
 		self.container_three = QWidget()
