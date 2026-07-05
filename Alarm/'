@@ -1,4 +1,4 @@
-// Check to see if AM or PM is selected or stored in local storage or T/F
+// Check to see if AM or PM is selected
 
 // If am is selected hour should be (0 - 11)
 // if pm is selected hour should be (12 - 23)
@@ -6,11 +6,8 @@
 // EX: if 12:00 AM than 00:00
 // EX: if 6:00 PM than 18:00
 
-// grab the value of the hour and if True (PM) display (12 - 23)
-
 const am_pm = document.getElementById("sunrise"); 
 const sendBtn = document.getElementById("send")
-
 
 sendBtn.addEventListener('click', sunTime)
 
