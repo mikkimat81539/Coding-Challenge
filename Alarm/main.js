@@ -23,8 +23,13 @@ function sunTime() {
 	timeBool = (sunValue === "am")
 
 	if (!timeBool && int_hour !== 12) {
-		int_hour += 12;
+		int_hour += 12
 		console.log(int_hour)	
+	}
+
+	else if (timeBool && int_hour === 12) {
+		int_hour = 0
+		console.log(int_hour)
 	}
 
 	else {
