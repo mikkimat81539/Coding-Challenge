@@ -39,7 +39,10 @@ function sunTime() {
 	if (!timeBool && int_hour !== 12) {
 		int_hour += 12
 		let schedule_time = `${String(int_hour)}:${String(int_min).padStart(2, '0')}`
-		console.log(schedule_time)
+		
+		if (localTime === schedule_time){
+
+			console.log(true)}
 
 	}
 
@@ -47,13 +50,21 @@ function sunTime() {
 	else if (timeBool && int_hour === 12) {
 		int_hour = 0
 		let schedule_time = `${String(int_hour)}:${String(int_min).padStart(2, '0')}`
-		console.log(schedule_time)
+
+		if (localTime === schedule_time){
+
+			console.log(true)}
+
 	}
 
 	// AM should be (1 - 11)
 	else {
 		let schedule_time = `${String(int_hour)}:${String(int_min).padStart(2, '0')}`
-		console.log(schedule_time)
+
+		if (localTime === schedule_time){
+
+			console.log(true)}
+
 	}
 }
 
