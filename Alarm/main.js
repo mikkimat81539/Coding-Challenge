@@ -20,10 +20,10 @@ let timeBool = true // to see whether user selected AM or PM
 sendBtn.addEventListener('click', sunTime)
 
 function sunTime() {
-	const sunValue = am_pm.value
+	const sunValue = am_pm.value // grab the value of the selected AM/PM
 	let int_hour = Number(userHour.value) // convert value into integers
 
-	timeBool = (sunValue === "am")
+	timeBool = (sunValue === "am") // if user selects AM than True
 
 	// PM should be (12 - 23)
 	if (!timeBool && int_hour !== 12) {
