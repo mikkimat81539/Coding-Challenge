@@ -9,7 +9,14 @@ EX: if 6:00 PM than 18:00 -- DONE
 grab the value of the hour and if True (PM) display (12 - 23) -- DONE
 
 Store hour and minutes in format -- DONE
-if localTime == scheduled time 
+if localTime == scheduled time -- DONE 
+
+Add sound 
+
+Extra:
+- Add lists of sound to select from
+- set multiple times
+- set date and time
 
 */
 
