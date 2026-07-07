@@ -30,18 +30,18 @@ function sunTime() {
 	// PM should be (12 - 23)
 	if (!timeBool && int_hour !== 12) {
 		int_hour += 12
-		console.log(int_hour, int_min)	
+		console.log(String(int_hour), String(int_min).padStart(2, '0'))	
 	}
 
 	// if 12 is selected and AM is selected than it should be 0
 	else if (timeBool && int_hour === 12) {
 		int_hour = 0
-		console.log(int_hour, int_min)
+		console.log(String(int_hour), String(int_min).padStart(2, '0'))
 	}
 
 	// AM should be (1 - 11)
 	else {
-		console.log(int_hour, int_min)
+		console.log(String(int_hour), String(int_min).padStart(2, '0'))
 	}
 }
 
