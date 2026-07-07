@@ -14,6 +14,7 @@
 const am_pm = document.getElementById("sunrise"); 
 const sendBtn = document.getElementById("send")
 const userHour = document.getElementById("hour")
+const userMin = document.getElementById("minutes")
 
 let timeBool = true // to see whether user selected AM or PM
 
@@ -22,24 +23,25 @@ sendBtn.addEventListener('click', sunTime)
 function sunTime() {
 	const sunValue = am_pm.value // grab the value of the selected AM/PM
 	let int_hour = Number(userHour.value) // convert value into integers
+	let int_min = Number(userMin.value)
 
 	timeBool = (sunValue === "am") // if user selects AM than True
 
 	// PM should be (12 - 23)
 	if (!timeBool && int_hour !== 12) {
 		int_hour += 12
-		console.log(int_hour)	
+		console.log(int_hour, int_min)	
 	}
 
 	// if 12 is selected and AM is selected than it should be 0
 	else if (timeBool && int_hour === 12) {
 		int_hour = 0
-		console.log(int_hour)
+		console.log(int_hour, int_min)
 	}
 
 	// AM should be (1 - 11)
 	else {
-		console.log(int_hour)
+		console.log(int_hour, int_min)
 	}
 }
 
