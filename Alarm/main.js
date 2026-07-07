@@ -10,14 +10,25 @@
 
 const am_pm = document.getElementById("sunrise"); 
 const sendBtn = document.getElementById("send")
+const userHour = document.getElementById("hour")
 
+let timeBool = true
 
 sendBtn.addEventListener('click', sunTime)
 
 function sunTime() {
 	const sunValue = am_pm.value
+	let int_hour = Number(userHour.value);
 
-	console.log(sunValue)
+	timeBool = (sunValue === "am")
 
+	if (!timeBool && int_hour !== 12) {
+		int_hour += 12;
+		console.log(int_hour)	
+	}
+
+	else {
+		console.log(int_hour)
+	}
 }
 
