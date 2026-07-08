@@ -14,7 +14,6 @@ if localTime == scheduled time -- DONE
 Add sound
 refresh page when time hits
 store times in sorted list -- DONE
-store times in list in localStorage 
 
 Extra (create another fieldset):
 - Add lists of sound to select from
@@ -103,5 +102,12 @@ function sunTime() {
 
 	timeList.sort()
 	console.log(timeList)
+
+	for (let i = 0; i < timeList.length; i++){
+			if (i == localTime) {
+				console.log(true)
+			}
+		}
+
 }
 
