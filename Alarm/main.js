@@ -12,11 +12,12 @@ Store hour and minutes in format -- DONE
 if localTime == scheduled time -- DONE 
 
 Add sound
-store times in sorted local storage or list 
+refresh page when time hits
+store times in sorted list -- DONE
+store times in list in localStorage 
 
-Extra:
+Extra (create another fieldset):
 - Add lists of sound to select from
-- set multiple times
 - set date and time
 
 */
@@ -43,7 +44,7 @@ function sunTime() {
 	const localHour = new Date().getHours()
 	const localMin = new Date().getMinutes()
 
-	const localTime = `${String(localHour)}:${String(localMin)}`
+	const localTime = `${String(localHour).padStart(2, "0")}:${String(localMin)}`
 
 	// PM should be (13 - 23)
 	if (!timeBool && int_hour !== 12) {
