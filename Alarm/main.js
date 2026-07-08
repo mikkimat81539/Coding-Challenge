@@ -102,10 +102,13 @@ function sunTime() {
 	}
 
 	timeList.sort()
-	localStorage.setItem("Time", timeList)
+
+	let counter = 1
 
 	for (let i = 0; i < timeList.length; i++){
-			// localStorage.setItem("Time", timeList[i])
+			localStorage.setItem(`Time ${counter}`, timeList[i])
+
+			counter += 1			
 
 			if (i == localTime) {
 				console.log(true)
