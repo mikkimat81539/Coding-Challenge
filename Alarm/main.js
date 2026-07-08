@@ -11,7 +11,8 @@ grab the value of the hour and if True (PM) display (12 - 23) -- DONE
 Store hour and minutes in format -- DONE
 if localTime == scheduled time -- DONE 
 
-Add sound 
+Add sound
+store times in sorted local storage or list 
 
 Extra:
 - Add lists of sound to select from
@@ -28,6 +29,8 @@ const userMin = document.getElementById("minutes")
 
 let timeBool = true // to see whether user selected AM or PM
 
+const timeList = [] // Store multiple times in a list
+
 sendBtn.addEventListener('click', sunTime)
 
 function sunTime() {
@@ -42,11 +45,14 @@ function sunTime() {
 
 	const localTime = `${String(localHour)}:${String(localMin)}`
 
-	// PM should be (12 - 23)
+	// PM should be (13 - 23)
 	if (!timeBool && int_hour !== 12) {
 		int_hour += 12
 		let schedule_time = `${String(int_hour)}:${String(int_min).padStart(2, '0')}`
-		
+	
+		timeList.push(schedule_time)
+		console.log(timeList)
+
 		if (localTime === schedule_time){
 
 			console.log(true)}
@@ -58,6 +64,23 @@ function sunTime() {
 		int_hour = 0
 		let schedule_time = `${String(int_hour)}:${String(int_min).padStart(2, '0')}`
 
+		timeList.push(schedule_time)
+		console.log(timeList)
+
+		if (localTime === schedule_time){
+
+			console.log(true)}
+
+	}
+
+	// if 12 is selected and PM is selected than it should be 12
+	else if (!timeBool && int_hour === 12) {
+		int_hour = 12
+		let schedule_time = `${String(int_hour)}:${String(int_min).padStart(2, '0')}`
+
+		timeList.push(schedule_time)
+		console.log(timeList)
+
 		if (localTime === schedule_time){
 
 			console.log(true)}
@@ -67,6 +90,9 @@ function sunTime() {
 	// AM should be (1 - 11)
 	else {
 		let schedule_time = `${String(int_hour)}:${String(int_min).padStart(2, '0')}`
+
+		timeList.push(schedule_time)
+		console.log(timeList)
 
 		if (localTime === schedule_time){
 
