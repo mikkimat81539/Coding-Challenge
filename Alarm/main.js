@@ -12,8 +12,9 @@ Store hour and minutes in format -- DONE
 if localTime == scheduled time -- DONE 
 
 Add sound
-refresh page when time hits
 store times in sorted list -- DONE
+
+use Local storage for timer
 
 Extra (create another fieldset):
 - Add lists of sound to select from
@@ -53,9 +54,9 @@ function sunTime() {
 		timeList.push(schedule_time)
 		// console.log(timeList)
 
-		if (localTime === schedule_time){
+		/*if (localTime === schedule_time){
 
-			console.log(true)}
+			console.log(true)}*/
 
 	}
 
@@ -67,9 +68,9 @@ function sunTime() {
 		timeList.push(schedule_time)
 		// console.log(timeList)
 
-		if (localTime === schedule_time){
+		/*if (localTime === schedule_time){
 
-			console.log(true)}
+			console.log(true)}*/
 
 	}
 
@@ -81,9 +82,9 @@ function sunTime() {
 		timeList.push(schedule_time)
 		// console.log(timeList)
 
-		if (localTime === schedule_time){
+		/*if (localTime === schedule_time){
 
-			console.log(true)}
+			console.log(true)}*/
 
 	}
 
@@ -94,20 +95,22 @@ function sunTime() {
 		timeList.push(schedule_time)
 		// console.log(timeList)
 
-		if (localTime === schedule_time){
+		/*if (localTime === schedule_time){
 
-			console.log(true)}
+			console.log(true)}*/
 
 	}
 
 	timeList.sort()
-	console.log(timeList)
+	localStorage.setItem("Time", timeList)
 
 	for (let i = 0; i < timeList.length; i++){
+			// localStorage.setItem("Time", timeList[i])
+
 			if (i == localTime) {
 				console.log(true)
 			}
-		}
-
+	}
+	console.log(timeList)
 }
 
