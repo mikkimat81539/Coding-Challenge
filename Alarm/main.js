@@ -14,6 +14,8 @@ if localTime == scheduled time -- DONE
 Add sound
 store times in sorted list -- DONE
 
+remove time from local storage if condition is met
+
 use Local storage for timer
 
 Extra (create another fieldset):
@@ -103,17 +105,24 @@ function sunTime() {
 
 	timeList.sort()
 
-	let counter = 1
+	let counter = 1 // increment so I can add it to KEY in local storage
 
 	for (let i = 0; i < timeList.length; i++){
 			localStorage.setItem(`Time ${counter}`, timeList[i])
 
+			const getTime = localStorage.getItem(`Time ${counter}`)
+
+			// console.log("same?", getTime === localTime);
+
+			if (getTime === localTime) {
+				alert("RING RING RING")
+				localStorage.removeItem(`Time ${counter}`)
+			}
+
 			counter += 1			
 
-			if (i == localTime) {
-				console.log(true)
-			}
 	}
+
 	console.log(timeList)
 }
 
