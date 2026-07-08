@@ -48,10 +48,10 @@ function sunTime() {
 	// PM should be (13 - 23)
 	if (!timeBool && int_hour !== 12) {
 		int_hour += 12
-		let schedule_time = `${String(int_hour)}:${String(int_min).padStart(2, '0')}`
+		let schedule_time = `${String(int_hour).padStart(2, "0")}:${String(int_min).padStart(2, '0')}`
 	
 		timeList.push(schedule_time)
-		console.log(timeList)
+		// console.log(timeList)
 
 		if (localTime === schedule_time){
 
@@ -62,10 +62,10 @@ function sunTime() {
 	// if 12 is selected and AM is selected than it should be 0
 	else if (timeBool && int_hour === 12) {
 		int_hour = 0
-		let schedule_time = `${String(int_hour)}:${String(int_min).padStart(2, '0')}`
+		let schedule_time = `${String(int_hour).padStart(2, "0")}:${String(int_min).padStart(2, '0')}`
 
 		timeList.push(schedule_time)
-		console.log(timeList)
+		// console.log(timeList)
 
 		if (localTime === schedule_time){
 
@@ -76,10 +76,10 @@ function sunTime() {
 	// if 12 is selected and PM is selected than it should be 12
 	else if (!timeBool && int_hour === 12) {
 		int_hour = 12
-		let schedule_time = `${String(int_hour)}:${String(int_min).padStart(2, '0')}`
+		let schedule_time = `${String(int_hour).padStart(2, "0")}:${String(int_min).padStart(2, '0')}`
 
 		timeList.push(schedule_time)
-		console.log(timeList)
+		// console.log(timeList)
 
 		if (localTime === schedule_time){
 
@@ -89,15 +89,18 @@ function sunTime() {
 
 	// AM should be (1 - 11)
 	else {
-		let schedule_time = `${String(int_hour)}:${String(int_min).padStart(2, '0')}`
+		let schedule_time = `${String(int_hour).padStart(2, "0")}:${String(int_min).padStart(2, '0')}`
 
 		timeList.push(schedule_time)
-		console.log(timeList)
+		// console.log(timeList)
 
 		if (localTime === schedule_time){
 
 			console.log(true)}
 
 	}
+
+	timeList.sort()
+	console.log(timeList)
 }
 
