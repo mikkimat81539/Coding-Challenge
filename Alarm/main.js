@@ -135,9 +135,9 @@ function sunTime() {
 }
 
 function alarmAlert() {
+	//alert("RING RING RING")
 	alarmSound.play()
-	// alert("RING RING RING")
-	window.location.reload()
+	// window.location.reload()
 
 }
 
