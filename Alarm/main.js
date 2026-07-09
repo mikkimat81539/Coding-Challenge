@@ -34,6 +34,10 @@ let timeBool = true // to see whether user selected AM or PM
 
 const timeList = [] // Store multiple times in a list
 
+// const localHour = new Date().getHours()
+// const localMin = new Date().getMinutes()
+// const localTime = `${String(localHour).padStart(2, "0")}:${String(localMin)}`
+
 sendBtn.addEventListener('click', sunTime)
 
 function sunTime() {
@@ -43,10 +47,11 @@ function sunTime() {
 
 	timeBool = (sunValue === "am") // if user selects AM than True
 
-	const localHour = new Date().getHours()
+	/* const localHour = new Date().getHours()
 	const localMin = new Date().getMinutes()
 
 	const localTime = `${String(localHour).padStart(2, "0")}:${String(localMin)}`
+	*/
 
 	// PM should be (13 - 23)
 	if (!timeBool && int_hour !== 12) {
@@ -105,7 +110,7 @@ function sunTime() {
 
 	timeList.sort()
 
-	let counter = 1 // increment so I can add it to KEY in local storage
+	/* let counter = 1 // increment so I can add it to KEY in local storage
 
 	for (let i = 0; i < timeList.length; i++){
 			localStorage.setItem(`Time ${counter}`, timeList[i])
@@ -120,9 +125,31 @@ function sunTime() {
 			}
 
 			counter += 1			
-
 	}
-
+	*/
 	console.log(timeList)
 }
 
+setInterval(() => {
+	const localHour = new Date().getHours()
+	const localMin = new Date().getMinutes()
+	const localTime = `${String(localHour).padStart(2, "0")}:${String(localMin)}`
+
+	let counter = 1 // increment so I can add it to KEY in local storage
+
+	for (let i = 0; i < timeList.length; i++){
+			localStorage.setItem(`Time ${counter}`, timeList[i])
+
+			const getTime = localStorage.getItem(`Time ${counter}`)
+
+			// console.log("same?", getTime === localTime);
+
+			if (getTime === localTime) {
+				alert("RING RING RING")
+				localStorage.removeItem(`Time ${counter}`)
+			}
+
+			counter += 1
+	}
+
+}, 1000)
