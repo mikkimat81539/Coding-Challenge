@@ -11,12 +11,12 @@ grab the value of the hour and if True (PM) display (12 - 23) -- DONE
 Store hour and minutes in format -- DONE
 if localTime == scheduled time -- DONE 
 
-Add sound
+Add sound -- DONE
 store times in sorted list -- DONE
 
-remove time from local storage if condition is met
+remove time from local storage if condition is met - DONE
 
-use Local storage for timer
+use Local storage for timer -- DONE
 
 Extra (create another fieldset):
 - Add lists of sound to select from
@@ -33,6 +33,9 @@ const userMin = document.getElementById("minutes")
 let timeBool = true // to see whether user selected AM or PM
 
 const timeList = [] // Store multiple times in a list
+
+const alarmSound = new Audio('blk_man_yelling.mp3')
+
 
 // const localHour = new Date().getHours()
 // const localMin = new Date().getMinutes()
@@ -132,6 +135,7 @@ function sunTime() {
 }
 
 function alarmAlert() {
+	alarmSound.play()
 	alert("RING RING RING")
 	window.location.reload()
 
@@ -153,8 +157,7 @@ setInterval(() => {
 
 			if (getTime === localTime) {
 				localStorage.removeItem(`Time ${counter}`)
-				alarmAlert(counter)
-				// localStorage.removeItem(`Time ${counter}`)
+				alarmAlert()
 			}
 
 			counter += 1
