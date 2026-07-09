@@ -126,8 +126,15 @@ function sunTime() {
 
 			counter += 1			
 	}
-	*/
+	
 	console.log(timeList)
+	*/
+}
+
+function alarmAlert(counter) {
+	alert("RING RING RING")
+	window.location.reload()
+	
 }
 
 setInterval(() => {
@@ -145,8 +152,9 @@ setInterval(() => {
 			// console.log("same?", getTime === localTime);
 
 			if (getTime === localTime) {
-				alert("RING RING RING")
-				localStorage.removeItem(`Time ${counter}`)
+				//alert("RING RING RING")
+				alarmAlert(counter)
+				// localStorage.removeItem(`Time ${counter}`)
 			}
 
 			counter += 1
