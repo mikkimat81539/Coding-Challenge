@@ -131,10 +131,10 @@ function sunTime() {
 	*/
 }
 
-function alarmAlert(counter) {
+function alarmAlert() {
 	alert("RING RING RING")
 	window.location.reload()
-	
+
 }
 
 setInterval(() => {
@@ -152,7 +152,7 @@ setInterval(() => {
 			// console.log("same?", getTime === localTime);
 
 			if (getTime === localTime) {
-				//alert("RING RING RING")
+				localStorage.removeItem(`Time ${counter}`)
 				alarmAlert(counter)
 				// localStorage.removeItem(`Time ${counter}`)
 			}
